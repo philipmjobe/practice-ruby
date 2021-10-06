@@ -18,12 +18,25 @@ class Vehicle
 end
 
 class Car < Vehicle
+
+  def initialize[input_option]
+    @make = input_option[:make]
+    @model = input_option[:model]
+    @color = input_option[:color]
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < Vehicle
+
+  def initialize[input_option]
+    @type = input_option[:type]
+    @size = input_option[:size]
+  end
+  
   def ring_bell
     puts "Ring ring!"
   end
