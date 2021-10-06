@@ -20,6 +20,7 @@ end
 class Car < Vehicle
 
   def initialize[input_option]
+    super
     @make = input_option[:make]
     @model = input_option[:model]
     @color = input_option[:color]
@@ -33,6 +34,7 @@ end
 class Bike < Vehicle
 
   def initialize[input_option]
+    super
     @type = input_option[:type]
     @size = input_option[:size]
   end
