@@ -1,5 +1,6 @@
 class Store_Items
   attr_reader :price, :color, :shape, :name
+  attr_writer :color
 
   def initialize(price, color, shape, name)
     @price = price
@@ -17,3 +18,5 @@ puts item_3.price
 puts item_3.color
 puts item_3.shape
 puts item_3.name
+item_3.color = "red"
+puts item_3.color
