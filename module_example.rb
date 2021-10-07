@@ -32,3 +32,6 @@ class Bike
     puts "Ring ring!"
   end
 end
+
+bike1 = Bike.new
+car1 = Car.new
