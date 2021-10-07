@@ -9,11 +9,3 @@ module Products
     @name = input_option[:name]
   end
 end
-
-class Store_Items
-  include Products
-end
-
-item_1 = Store_Items.new(price: 15, color: "orange", shape: "round", name: "basketball")
-item_2 = Store_Items.new(price: 20, color: "brown", shape: "oval", name: "football")
-item_3 = Store_Items.new(price: 5, color: "black", shape: "disk", name: "hockey puck")
