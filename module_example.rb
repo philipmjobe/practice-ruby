@@ -1,4 +1,4 @@
-class Car
+module Attributes
   def initialize
     @speed = 0
     @direction = "north"
@@ -15,6 +15,10 @@ class Car
   def turn(new_direction)
     @direction = new_direction
   end
+end
+
+class Car
+  include Attributes
 
   def honk_horn
     puts "Beeeeeeep!"
@@ -22,22 +26,7 @@ class Car
 end
 
 class Bike
-  def initialize
-    @speed = 0
-    @direction = "north"
-  end
-
-  def brake
-    @speed = 0
-  end
-
-  def accelerate
-    @speed += 10
-  end
-
-  def turn(new_direction)
-    @direction = new_direction
-  end
+  include Attributes
 
   def ring_bell
     puts "Ring ring!"
