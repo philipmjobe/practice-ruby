@@ -1,6 +1,6 @@
 class Employee
-  attr_reader :first_name, :last_name, :active
-  attr_writer :active
+  attr_reader :first_name, :last_name, :active, :salary
+  attr_writer :active, :salary
 
   def initialize(input_options)
     @first_name = input_options[:first_name]
@@ -16,9 +16,6 @@ class Employee
   def give_annual_raise
     @salary = 1.05 * @salary
   end
-
-  def give_all_raises
-  end
 end
 
 employee1 = Employee.new({ first_name: "Majora", last_name: "Carter", salary: 80000, active: true })
@@ -32,6 +29,12 @@ class Manager < Employee
     @employees = input_options[:employees]
   end
 
+  def give_all_raises
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+  end
+
   def send_report
     puts "Sending email..."
     # use email sending library...
@@ -42,3 +45,8 @@ end
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_report
+puts employee1.salary
+puts employee2.salary
+manager.give_all_raises
+puts employee1.salary
+puts employee2.salary
